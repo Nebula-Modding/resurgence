@@ -21,6 +21,7 @@ group = mod_group_id
 repositories {
     mavenLocal()
     maven{
+        name = "BlameJared"
         url = uri("https://maven.blamejared.com")
     }
 
@@ -108,7 +109,10 @@ dependencies {
     // For all intends and purposes: You can treat this dependency as if it is a normal library you would use.
     implementation "net.neoforged:neoforge:${neo_version}"
     implementation "top.theillusivec4.curios:curios-neoforge:${curios_version}"
-    implementation "team.lodestar.lodestone.${minecraft_version}-${lodestone_version}:lodestone-${minecraft_version}-${lodestone_version}.jar"
+    implementation("team.lodestar.lodestone:lodestone:${minecraft_version}-${lodestone_version}")
+        exclude group: "maven.modrinth"
+    }
+
     // Example optional mod dependency with JEI
     // The JEI API is declared for compile time use, while the full JEI artifact is used at runtime
     // compileOnly "mezz.jei:jei-${mc_version}-common-api:${jei_version}"
