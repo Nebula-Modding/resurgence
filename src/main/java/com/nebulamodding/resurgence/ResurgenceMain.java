@@ -1,5 +1,6 @@
 package com.nebulamodding.resurgence;
 
+import com.nebulamodding.resurgence.registry.items.ResItems;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -42,16 +43,22 @@ public class ResurgenceMain
     public static final String MODID = "resurgence";
     // Directly reference a slf4j logger
     private static final Logger LOGGER = LogUtils.getLogger();
-    // Create a Deferred Register to hold Blocks which will all be registered under the "examplemod" namespace
-    public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(MODID);
-    // Create a Deferred Register to hold Items which will all be registered under the "examplemod" namespace
-    public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(MODID);
+
+
+    private void addCreative(BuildCreativeModeTabContentsEvent event) {
+        if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
+            event.accept(ResItems.VOLERMITE);
+        };
+    }
+
+
+
 
     // Creates a new Block with the id "examplemod:example_block", combining the namespace and path
 
     public ResurgenceMain(IEventBus modEventBus, ModContainer modContainer)
     {
-
+        ResItems.register(modEventBus);
     }
 
 
