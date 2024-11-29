@@ -2,6 +2,7 @@ package com.nebulamodding.resurgence.registry.blocks;
 
 import com.nebulamodding.resurgence.ResurgenceMain;
 import com.nebulamodding.resurgence.registry.items.ResItems;
+import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -14,6 +15,14 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 import java.util.function.Supplier;
 
 public class ResBlocks {
+
+    public static final MutableComponent onInteract(Block block ) {
+        var blockName = block.getName();
+        return blockName;
+
+
+    }
+
 
     public static final DeferredRegister.Blocks BLOCKS =
             DeferredRegister.createBlocks(ResurgenceMain.MODID);
