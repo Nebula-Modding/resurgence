@@ -29,7 +29,7 @@ public class ResBlocks {
 
     public static final DeferredBlock<Block> EVERWOOD_LOG = registerBlock("everwood_log",
             ()->new Block(BlockBehaviour.Properties.of()
-                    .strength(1f).requiresCorrectToolForDrops().sound(SoundType.ANCIENT_DEBRIS)));
+                    .strength(1f).requiresCorrectToolForDrops().sound(SoundType.ANCIENT_DEBRIS).ignitedByLava()));
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);
