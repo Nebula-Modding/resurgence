@@ -19,7 +19,9 @@ import team.lodestar.lodestone.systems.particle.world.type.LodestoneWorldParticl
 
 
 public class ResParticleHandler {
-
+    /*
+    This class contains is where particle effects should be declared
+     */
 
 
 
