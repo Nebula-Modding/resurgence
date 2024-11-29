@@ -13,8 +13,9 @@ public class ResItems {
             ()-> new Item(new Item.Properties()));
 
 
-    public static void register(IEventBus event) {
-        ITEMS.register(event);
+    public static void register(IEventBus eventBus)
+    {
+        ITEMS.register(eventBus);
     }
 
 
