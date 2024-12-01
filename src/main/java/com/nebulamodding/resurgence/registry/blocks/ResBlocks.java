@@ -27,7 +27,7 @@ public class ResBlocks {
     public static final DeferredRegister.Blocks BLOCKS =
             DeferredRegister.createBlocks(ResurgenceMain.MODID);
 
-    public static final DeferredBlock<Block> EVERWOOD_LOG = registerBlock("everwood_log",
+    public static final DeferredBlock<Block> EVERWOOD_PLANKS = registerBlock("everwood_planks",
             ()->new Block(BlockBehaviour.Properties.of()
                     .strength(1f).requiresCorrectToolForDrops().sound(SoundType.ANCIENT_DEBRIS).ignitedByLava()));
 

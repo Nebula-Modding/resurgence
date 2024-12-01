@@ -1,5 +1,6 @@
 package com.nebulamodding.resurgence;
 
+import com.nebulamodding.resurgence.registry.blocks.ResBlocks;
 import com.nebulamodding.resurgence.registry.items.ResItems;
 import org.slf4j.Logger;
 
@@ -45,6 +46,8 @@ public class ResurgenceMain
     private static final Logger LOGGER = LogUtils.getLogger();
 
 
+
+
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
         if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
             event.accept(ResItems.VOLERMITE);
@@ -58,8 +61,11 @@ public class ResurgenceMain
 
     public ResurgenceMain(IEventBus modEventBus, ModContainer modContainer)
     {
+
         ResItems.register(modEventBus);
+        ResBlocks.register(modEventBus);
     }
+
 
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
