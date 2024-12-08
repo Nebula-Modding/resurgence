@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "resurgence:block/everwood_plank.png"
+    "all": "resurgence:block/everwood_planks.png"
   }
 }

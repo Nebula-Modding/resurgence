@@ -46,7 +46,7 @@ public class ResBlocks {
     }
 
     public static void register(IEventBus eventBus) {
-
+        BLOCKS.register(eventBus);
     }
 
 
