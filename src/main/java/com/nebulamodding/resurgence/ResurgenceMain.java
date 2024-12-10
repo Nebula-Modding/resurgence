@@ -36,6 +36,8 @@ import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
+import java.util.Random;
+
 // The value here should match an entry in the META-INF/neoforge.mods.toml file
 @Mod(ResurgenceMain.MODID)
 public class ResurgenceMain
@@ -47,6 +49,24 @@ public class ResurgenceMain
 
 
 
+    public static final String[] LOG_SPLASH_TEXTS = {
+        "Preparing To Commit Crimes Against Nature",
+        "I Wonder What Afronts To Code Lay Beneath This Mod",
+        "This is a log splash, only pack devs/mod devs should see this. If your a player. Get out",
+        "Transmuting lead into gold",
+        "OH GOD IT HURTS",
+        "Volermite?, I never met ermite!",
+        "I am so sorry",
+        "So many splash",
+        "How Splashy!"
+
+
+
+};
+
+
+
+    public static final Random RNG = new Random();
 
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
         if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
@@ -73,7 +93,7 @@ public class ResurgenceMain
     public void onServerStarting(ServerStartingEvent event)
     {
         // Do something when the server starts
-        LOGGER.info("HELLO from server starting");
+
     }
 
     // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
@@ -84,7 +104,7 @@ public class ResurgenceMain
         public static void onClientSetup(FMLClientSetupEvent event)
         {
             // Some client setup code
-            LOGGER.info("HELLO FROM CLIENT SETUP");
+            LOGGER.info(LOG_SPLASH_TEXTS[RNG.nextInt(LOG_SPLASH_TEXTS.length)]);
             LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
         }
     }
