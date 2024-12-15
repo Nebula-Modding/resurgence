@@ -1,6 +1,7 @@
 package com.nebulamodding.resurgence;
 
 import com.nebulamodding.resurgence.registry.blocks.ResBlocks;
+import com.nebulamodding.resurgence.registry.items.ResCreativeModeTabs;
 import com.nebulamodding.resurgence.registry.items.ResItems;
 import org.slf4j.Logger;
 
@@ -81,7 +82,7 @@ public class ResurgenceMain
 
     public ResurgenceMain(IEventBus modEventBus, ModContainer modContainer)
     {
-
+        ResCreativeModeTabs.register(modEventBus);
         ResItems.register(modEventBus);
         ResBlocks.register(modEventBus);
     }
